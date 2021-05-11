@@ -1,8 +1,0 @@
-stream {
-    server {
-        server_name *.bluejay.governify.io;
-
-        listen 443;
-        proxy_pass http://bluejay-render:80;        
-    }
-}

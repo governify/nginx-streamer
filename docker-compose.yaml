@@ -1,7 +1,7 @@
 version: '2.2'
 services:
-  nginx-outside:
-    container_name: nginx-gateway
+  governify-nginx-streamer:
+    container_name: governify-nginx-streamer
     image: nginx
     ports:
       - '443:443'
@@ -12,16 +12,17 @@ services:
         soft: 10240
         hard: 10240
     volumes:
-      - './configurations/config/nginx.conf:/etc/nginx/nginx.conf'
-      - './configurations/data/certbot/conf:/etc/letsencrypt'
-      - './configurations/config/static:/etc/nginx/static'
-      - './configurations/certs:/etc/nginx/certs'
-      - './configurations/config/services-nginx-config:/etc/nginx/templates'
-      - './configurations/data/certbot/www:/var/www/certbot'
+      - './nginx.conf:/etc/nginx/nginx.conf'
     networks:
       - governify-bluejay
+      - governify-galibo
+      - governify-osseco
     mem_limit: 100m
     restart: 'on-failure:5'
 networks:
   governify-bluejay:
-    external: false
+    external: true
+  governify-galibo:
+    external: true
+  governify-osseco:
+    external: true
