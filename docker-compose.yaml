@@ -17,6 +17,7 @@ services:
       - governify-bluejay
       - governify-galibo
       - governify-osseco
+      - governify-services
     mem_limit: 100m
     restart: 'on-failure:5'
 networks:
@@ -25,4 +26,6 @@ networks:
   governify-galibo:
     external: true
   governify-osseco:
+    external: true
+  governify-services:
     external: true
