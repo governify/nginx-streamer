@@ -17,6 +17,8 @@ services:
       - governify-bluejay
       - governify-galibo
       - governify-osseco
+      - governify-falcon
+      - governify-pompeia
       - governify-services
     mem_limit: 100m
     restart: 'on-failure:5'
@@ -26,6 +28,10 @@ networks:
   governify-galibo:
     external: true
   governify-osseco:
+    external: true
+  governify-falcon:
+    external: true
+  governify-pompeia:
     external: true
   governify-services:
     external: true
