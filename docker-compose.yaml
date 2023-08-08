@@ -19,8 +19,6 @@ services:
       - governify-osseco
       - governify-falcon
       - governify-pompeia
-      - governify-falcon
-      - governify-pompeia
       - governify-services
       - lucidchain
     mem_limit: 100m
@@ -36,7 +34,7 @@ networks:
     external: true
   governify-pompeia:
     external: true
-  lucidchain:
-    external: true
   governify-services:
+    external: true
+  lucidchain:
     external: true
